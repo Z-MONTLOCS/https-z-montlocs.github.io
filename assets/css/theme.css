@@ -1,0 +1,178 @@
+/* Paleta de colores para el modo claro */
+:root {
+    --light-theme-background: #F0F9FF;  
+    --light-theme-text: #2A2A2A;       
+    --light-theme-header-footer: #AFEFF1; 
+    
+    /* Paleta de colores para el modo oscuro */
+    --dark-theme-background: #1B1D23;   
+    --dark-theme-text: #E0E0E0;         
+    --dark-theme-header-footer: #2C3E50; 
+    --dark-theme-surface: #1F2630;      
+    --dark-theme-accent: #9AD1E3;       
+
+    /* Colores para los íconos */
+    --icon-light-color: #60c6e8;
+    --icon-dark-color: #AFEFF1;  
+
+    /* Colores de alerta */
+    --error-color-light: #B71C1C;    
+    --error-color-dark: #D32F2F;  
+    --success-color-light: #388E3C;  
+    --success-color-dark: #1B5E20;   
+    --alert-background-light: #FFEBEE;
+    --alert-background-dark: #263238; 
+}
+
+/* Estilos para el pie de página */
+body.light-theme #footer {
+    background-color: var(--light-theme-header-footer);
+    color: var(--light-theme-text);
+}
+
+body.dark-theme #footer {
+    background-color: var(--dark-theme-header-footer);
+    color: var(--dark-theme-text);
+}
+
+/* Colores de alerta según el tema */
+[data-theme='light'] {
+    --error-color: var(--error-color-light);
+    --success-color: var(--success-color-light);
+}
+
+[data-theme='dark'] {
+    --error-color: var(--error-color-dark);
+    --success-color: var(--success-color-dark);
+}
+
+/* Estilos generales para el cuerpo según el tema */
+body.light-theme {
+    background-color: var(--light-theme-background);
+    color: var(--light-theme-text);
+}
+
+body.light-theme header {
+    background-color: var(--light-theme-header-footer);
+    color: var(--light-theme-text);
+}
+
+body.dark-theme {
+    background-color: var(--dark-theme-background);
+    color: var(--dark-theme-text);
+}
+
+body.dark-theme header {
+    background-color: var(--dark-theme-header-footer);
+    color: var(--dark-theme-text);
+}
+
+/* Estilos específicos para el contenedor de superficie en modo oscuro */
+.dark-theme .surface {
+    background-color: var(--dark-theme-surface);
+}
+
+/* Estilos para el ícono de cambio de tema */
+.theme-toggle-container .theme-icon {
+    cursor: pointer;
+    transition: color 0.3s ease; 
+}
+
+body.light-theme .theme-icon {
+    color: var(--icon-light-color);
+}
+
+body.dark-theme .theme-icon {
+    color: var(--icon-dark-color);
+}
+
+/* Estilos para los botones de cifrado y descifrado */
+#encrypt-button,
+#decrypt-button {
+    background-color: var(--dark-theme-accent); 
+    color: var(--dark-theme-background); 
+}
+
+#encrypt-button:hover,
+#decrypt-button:hover {
+    background-color: #3a9bb4; 
+}
+
+body.dark-theme .encryption-actions {
+    background-color: var(--dark-theme-surface);
+}
+
+/* Estilos para los campos de código en modo oscuro */
+body.dark-theme #decrypt-code {
+    border: 1px solid var(--dark-theme-text);
+    background-color: var(--dark-theme-surface);
+    color: var(--dark-theme-text);
+}
+
+/* Estilos para el contenido del modal según el tema */
+body.light-theme .modal-content {
+    background-color: #fefefe;
+    color: #000;
+    border: 1px solid #888;
+}
+
+body.dark-theme .modal-content {
+    background-color: var(--dark-theme-surface);
+    color: var(--dark-theme-text);
+    border: 1px solid var(--dark-theme-text);
+}
+
+/* Estilos para el área de texto y botones en el modal */
+body.light-theme textarea#generated-code {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+body.light-theme button#copy-code-button {
+    background-color: #60c6e8;
+    color: #fff;
+}
+
+body.dark-theme textarea#generated-code {
+    background-color: var(--dark-theme-surface);
+    color: var(--dark-theme-text);
+    border: 1px solid var(--dark-theme-text);
+}
+
+body.dark-theme button#copy-code-button {
+    background-color: var(--dark-theme-accent);
+    color: var(--dark-theme-background);
+}
+
+/* Estilos para los contenedores de información geográfica y contadores */
+.geo-info-container,
+.counter-container {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+body.light-theme .geo-info-container,
+body.light-theme .counter-container {
+    background-color: var(--light-theme-background);
+    border: 1px solid var(--light-theme-text);
+}
+
+body.dark-theme .geo-info-container,
+body.dark-theme .counter-container {
+    background-color: var(--dark-theme-surface);
+    border: 1px solid var(--dark-theme-text);
+}
+
+/* Estilos para el texto dentro de los contenedores */
+body.light-theme .geo-item p,
+body.light-theme .counter-item span {
+    color: var(--light-theme-text);
+}
+
+body.dark-theme .geo-item p,
+body.dark-theme .counter-item span {
+    color: var(--dark-theme-text);
+}

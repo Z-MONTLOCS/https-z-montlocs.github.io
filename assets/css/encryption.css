@@ -1,0 +1,153 @@
+
+@media only screen and (min-width: 1025px) {
+
+    .encryption-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px; 
+        margin-top: 10px;
+    }
+
+    .encryption-actions {
+        display: flex;
+        gap: 10px; 
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #decrypt-code {
+        padding: 6px; 
+        font-size: 14px; 
+        border: 1px solid #ccc;
+        border-radius: 4px; 
+        width: 100%;
+        padding-right: 30px; 
+        box-sizing: border-box;
+    }
+
+    .input-container {
+        position: relative;
+        width: 100%;
+    }
+
+    #paste-code {
+        position: absolute;
+        right: 8px; 
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+        font-size: 16px; 
+    }
+
+    #paste-code:hover {
+        color: #000;
+    }
+}
+
+
+
+
+
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .encryption-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 3px;
+        gap: 6px;
+    }
+
+    .encryption-actions {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .input-container {
+        position: relative;
+        width: auto;
+        flex-grow: 1;
+    }
+
+    #decrypt-code {
+        padding: 4px 28px 4px 8px;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #paste-code {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+        font-size: 14px;
+        z-index: 1;
+    }
+
+    #paste-code:hover {
+        color: #000;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .encryption-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        gap: 4px;
+    }
+
+    .encryption-actions {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .input-container {
+        position: relative;
+        width: auto;
+        flex-grow: 1;
+    }
+
+    #decrypt-code {
+        padding: 2px 24px 2px 4px;
+        font-size: 10px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #paste-code {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555;
+        font-size: 12px;
+        z-index: 1;
+    }
+
+    #paste-code:hover {
+        color: #000;
+    }
+}

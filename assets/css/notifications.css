@@ -1,0 +1,88 @@
+
+#message-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 10px; 
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--alert-background);
+    width: 90%; 
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+#error-message,
+#success-message {
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+    width: 100%;
+}
+
+#error-message {
+    color: var(--error-color);
+}
+
+#success-message {
+    color: var(--success-color);
+}
+
+#error-message.hidden,
+#success-message.hidden {
+    animation: fadeOut 1s ease-in-out;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 1025px) {
+
+    #message-container {
+        top: 77px; 
+        width: 100%; 
+    }
+}
+
+
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    #message-container {
+        top: 70px; 
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    #message-container {
+        top: 70px; 
+    }
+}
+

@@ -1,0 +1,533 @@
+/* responsive.css */
+
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .theme-toggle-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .encryption-container {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        
+        gap: 10px;
+    }
+
+    .text-area-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .logo-container {
+        margin-right: 20px;
+    }
+
+    .theme-toggle-container {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .encryption-container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .text-area-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+}
+
+/* Estilos para escritorios */
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    header {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 50px;
+        position: fixed; /* Fija el encabezado en la parte superior de la página */
+        top: 0;
+        left: 0;
+        width: 100%; /* Asegura que el encabezado ocupe todo el ancho del viewport */
+        padding: 10px;
+        
+
+    }
+
+/* Estilo para el elemento <h1> */
+h1 {
+    font-size: 24px; /* Ajusta este valor según tu necesidad */
+}
+
+    
+
+
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+
+
+    }
+
+    .logo-container {
+        grid-column: 1 / 2;
+    }
+
+    h1 {
+        grid-column: 2 / 3;
+        text-align: center;
+    }
+
+
+
+
+    .theme-toggle-container {
+        font-size: 1.2em;
+        /* Aumenta el tamaño de la fuente del texto */
+        display: flex;
+        align-items: center;
+    }
+
+    #theme-toggle-label {
+        margin-right: 10px;
+        /* Espacio entre el texto y el ícono */
+    }
+
+    #theme-toggle {
+        font-size: 1.5em;
+        /* Aumenta el tamaño del ícono */
+        cursor: pointer;
+    }
+
+    .light-theme-icon {
+        color: #FFD700;
+        /* Color amarillo para el ícono en modo claro */
+    }
+
+    .dark-theme-icon {
+        color: #000;
+        /* Color negro para el ícono en modo oscuro */
+    }
+
+
+
+
+    .encryption-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Espacio alrededor del contenedor */
+
+    }
+    
+  
+
+    .encryption-actions {
+        display: flex;
+        gap: 20px; /* Espacio entre el input y los botones */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        align-items: center; /* Centra los elementos verticalmente */
+        margin-top: 15px; /* Espacio superior para separar del textarea */
+    }
+    
+    #decrypt-code {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+
+
+        width: 100%;
+        padding-right: 40px; /* Espacio para el icono */
+        box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del input */
+    
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Animación suave para el color de fondo */
+    }
+
+ 
+    .input-container {
+        position: relative;
+        width: 100%;
+    }
+    
+        
+    
+    #paste-code {
+        position: absolute;
+        right: 10px; /* Ajusta la posición horizontal del icono */
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #555; /* Color del icono */
+        font-size: 18px; /* Tamaño del icono */
+    }
+    
+    #paste-code:hover {
+        color: #000; /* Cambiar color al pasar el mouse */
+    }
+    
+
+
+
+
+
+
+
+
+    .text-area-container {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 300px;
+    }
+    
+    .label-container {
+        display: flex;
+        justify-content: flex-start; /* Alinea el label al inicio */
+        width: 100%;
+        margin-bottom: 10px; /* Espacio entre el label y el textarea */
+    }
+    
+   /* Estilos minimalistas para textarea */
+textarea.no-resize {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px; /* Espaciado interno cómodo */
+    font-size: 16px; /* Tamaño de fuente legible */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    background-color: #f9f9f9; /* Fondo claro */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    margin-bottom: 10px; /* Espacio inferior */
+    resize: none; /* Evita que el usuario redimensione el textarea */
+    outline: none; /* Elimina el contorno por defecto */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para efectos */
+}
+
+textarea.no-resize:focus {
+    border-color: #007BFF; /* Cambia el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Sombra sutil al enfocar */
+}
+
+
+    
+
+    .action-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px; /* Espacio entre los elementos de la sección */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        margin-top: 5px; /* Añade espacio superior */
+    }
+
+
+
+
+
+
+
+
+/* Estilos para el footer */
+#footer {
+    position: fixed;
+    bottom: 0; /* Posiciona el footer en la parte inferior de la ventana */
+    left: 0;
+    right: 0;
+    background-color: var(--footer-background); /* Color de fondo del footer */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Sombra superior para el footer */
+    display: flex; /* Usa Flexbox para alinear los logotipos */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 80px; /* Ajusta la altura del footer para dar espacio a los logotipos y etiquetas */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el cálculo del ancho total */
+}
+
+/* Estilos para los elementos dentro del footer */
+.footer-content {
+    display: flex; /* Usa Flexbox para alinear los logotipos y sus etiquetas */
+    justify-content: space-evenly; /* Distribuye el espacio uniformemente entre los elementos */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+/* Estilos para cada elemento del footer */
+.footer-item {
+    display: flex; /* Usa Flexbox para alinear el logotipo y el texto debajo */
+    flex-direction: column; /* Coloca el texto debajo del logotipo */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos específicos para cada logotipo */
+.footer-logo {
+    height: 40px; /* Ajusta la altura de los logotipos */
+    width: auto; /* Mantiene la proporción de los logotipos */
+    object-fit: contain; /* Asegura que los logotipos se ajusten sin distorsión */
+}
+
+/* Estilos para el texto debajo de los logotipos */
+.footer-logo-label {
+    margin-top: 5px; /* Espacio entre el logotipo y el texto */
+    font-size: 12px; /* Tamaño de fuente para las etiquetas */
+    color: var(--footer-text-color); /* Color del texto según el tema */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+
+
+
+
+
+
+
+
+
+/* modal.css */
+
+/* Estilos generales para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea#generated-code {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+button#copy-code-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+.info-and-counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Espacio entre la sección de información y los contadores */
+    width: 600px;
+
+}
+
+
+
+
+/* Contenedor principal */
+.info-and-counter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start; 
+    gap: 100px; /* Espacio entre las tarjetas */
+
+    margin-top: 20px;
+}
+
+
+
+/* Estilos para la tarjeta de información */
+.geo-info-container {
+    display: flex;
+    align-items: center;           /* Alinea verticalmente al centro */
+    background-color: #ffffff;     /* Fondo blanco para la tarjeta */
+    border: 1px solid #ddd;        /* Borde gris claro */
+    border-radius: 8px;            /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 10px;                 /* Espaciado interno */
+    height: 80px;                 /* Altura fija de 100px */
+    width: 600px;                  /* Ancho fijo para el contenedor */
+    box-sizing: border-box;        /* Incluye el padding y borde en el tamaño total */
+}
+
+/* Estilos para los elementos dentro de la tarjeta */
+.geo-item {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;                 /* Espaciado horizontal reducido */
+}
+
+.geo-item p {
+    margin: 0;
+    line-height: 1.4;             /* Altura de línea ajustada */
+    font-size: 14px;              /* Tamaño de fuente reducido */
+}
+
+.geo-flag {
+    width: 40px;                  /* Tamaño reducido */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 8px;            /* Espaciado entre imagen y texto */
+}
+
+
+
+
+
+
+/* Estilos para el contenedor de los contadores */
+.counter-container {
+    display: flex;
+    flex-direction: column; /* Los ítems estarán en columnas */
+    justify-content: center; /* Centra verticalmente los ítems */
+    align-items: center; /* Alinea horizontalmente al centro */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px; /* Ajusta el padding para el tamaño reducido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px; /* Ancho fijo de 100px */
+    height: 80px; /* Altura fija de 80px */
+    box-sizing: border-box; /* Incluye el padding y borde en el tamaño total */
+}
+
+/* Estilos para los ítems de contador */
+.counter-item {
+    display: flex;
+    flex-direction: row; /* Los íconos y los contadores estarán en una fila */
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 3px; /* Espacio entre el ícono y el contador */
+    font-size: 12px; /* Tamaño de fuente para el ítem */
+}
+
+/* Estilos para los íconos */
+.counter-item i {
+    font-size: 12px; /* Tamaño del ícono */
+    color: #007BFF; /* Color azul para los íconos */
+}
+
+/* Estilos para el texto del contador */
+.counter-item span {
+    font-size: 14px; /* Tamaño del texto del contador */
+    color: #007BFF;  /* Color azul para los contadores */
+    margin-left: 5px; /* Espacio entre el ícono y el texto */
+}
+
+
+
+
+
+
+
+}
