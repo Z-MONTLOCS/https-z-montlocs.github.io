@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <!-- Archivo de estilos CSS general -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Iconos de FontAwesome para utilizar en la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon: icono de la página que aparece en la pestaña del navegador -->
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico">
+
+</head>
+
+
+<body class="light-theme">
+
+    <header>
+        <!-- Contenedor del logo del sitio -->
+        <div class="logo-container">
+            <!-- Imagen del logo del sitio -->
+            <img src="/assets/images/logo.png" alt="Logo del Sitio" class="site-logo">
+        </div>
+
+        <!-- Título principal de la página -->
+        <h1>Encriptador y Desencriptador de Texto</h1>
+
+        <!-- Contenedor para el interruptor de tema -->
+        <div class="theme-toggle-container">
+            <!-- Etiqueta para el interruptor de tema -->
+            <span id="theme-toggle-label">Modo Claro</span>
+            <!-- Ícono para el interruptor de tema (modo claro/oscuro) -->
+            <i id="theme-toggle" class="fas fa-moon theme-icon light-theme-icon"></i>
+        </div>
+    </header>
+
+
+    <div id="message-container" class="hidden">
+        <!-- Contenedor para mensajes de error -->
+        <div id="error-message" class="error hidden"></div>
+        <!-- Contenedor para mensajes de éxito -->
+        <div id="success-message" class="success hidden"></div>
+    </div>
+
+
+
+    <main>
+
+
+
+        <section>
+
+            <div class="info-and-counter-container">
+                <!-- Sección de Información Geográfica -->
+                <div id="info" class="geo-info-container">
+                    <!-- Contenedor para la bandera del país -->
+                    <div class="geo-item">
+                        <img id="flag" alt="Bandera del país" class="geo-flag"
+                            src="https://www.cual-es-mi-ip.net/img/flags/co.svg">
+                    </div>
+                    <!-- Contenedor para la información del país -->
+                    <div class="geo-item">
+                        <p id="country-info"><strong>País:</strong> <span id="country">Colombia</span></p>
+                    </div>
+                    <!-- Contenedor para la información de la ciudad -->
+                    <div class="geo-item">
+                        <p id="city-info"><strong>Ciudad:</strong> <span id="city">Bogotá</span></p>
+                    </div>
+                    <!-- Contenedor para la información de la hora local -->
+                    <div class="geo-item">
+                        <p id="time-info"><strong>Hora:</strong> <span id="local-time">10:30 AM</span></p>
+                    </div>
+                </div>
+
+                <!-- Sección de Contadores -->
+                <div class="counter-container">
+                    <!-- Contador de visitas -->
+                    <div class="counter-item">
+                        <i class="fa-solid fa-eye" title="Visitas Sitio Web"></i>
+                        <!-- Ícono para el contador de visitas -->
+                        <span id="visit-counter">0</span>
+                    </div>
+                    <!-- Contador de textos encriptados -->
+                    <div class="counter-item">
+
+                        <i class="fa-solid fa-envelope-open-text" title="Textos encriptados"></i>
+                        <span id="encrypted-text-counter">0</span>
+                    </div>
+                    <!-- Contador de texto restante -->
+                    <div class="counter-item">
+                        <i class="fa-regular fa-hourglass-half " title="Texto restante"></i>
+                        <span id="remaining-text-counter">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="encryption-container">
+                <!-- Contenedor para el área de texto de cifrado -->
+                <div class="text-area-container">
+                    <!-- Contenedor para la etiqueta del área de texto -->
+                    <div class="label-container">
+                        <label for="message-to-encrypt">Mensaje a cifrar:</label>
+                    </div>
+
+                    <!-- Área de texto para ingresar el mensaje a cifrar -->
+                    <textarea class="no-resize" id="message-to-encrypt" name="message-text" rows="10" cols="50"
+                        maxlength="500" placeholder="Ingrese el texto aquí"></textarea>
+
+                    <!-- Información adicional sobre el formato del texto -->
+                    <p><i class="fas fa-info-circle"></i> Solo letras minúsculas y sin acentos.</p>
+
+                    <!-- Contenedor de acciones para cifrar y descifrar -->
+                    <div class="action-container">
+                        <!-- Contenedor para el campo de entrada de código y el botón de pegar código -->
+                        <div class="input-container">
+                            <input type="password" id="decrypt-code" placeholder="Ingrese el código de descifrado...">
+                            <i class="fas fa-paste" title="Pegar Código" id="paste-code"></i>
+                        </div>
+                        <!-- Botón para cifrar el mensaje -->
+                        <button id="encrypt-button">Cifrar</button>
+                        <!-- Botón para descifrar el mensaje -->
+                        <button id="decrypt-button">Descifrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Estructura del modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <!-- Botón para cerrar el modal -->
+                <span class="close-button">&times;</span>
+                <!-- Título del modal -->
+                <h2>Código Generado</h2>
+                <!-- Área de texto para mostrar el código generado -->
+                <textarea id="generated-code" readonly></textarea>
+                <!-- Botón para copiar el código al portapapeles -->
+                <button id="copy-code-button">Copiar Código</button>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-item">
+                <img src="https://cdn2.gnarususercontent.com.br/1/1221562/b6256fa6-5fde-4cdd-a4a3-d33ebc90bb6c.png"
+                    alt="alura LATAN" class="footer-logo">
+                <span class="footer-logo-label">alura LATAN</span>
+            </div>
+            <div class="footer-item">
+                <img src="data:image/jpeg;base64,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"
+                    alt="Firebase" class="footer-logo">
+                <span class="footer-logo-label">Firebase</span>
+            </div>
+            <div class="footer-item">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAM1BMVEUg5JL///+P8cg856Au5pnx/fjH+OTj/PFY666r9Nad88+B78F077tK6adm7bXV+uu59t3kW+fyAAAEdklEQVR4nO2di3bCIAxAna22an38/9duynDTQps32U7uBzDuaGKBQDcf/4RN6w5IESLeCBFvhIg3QsQbIeKNEPFGiHjj/4vsjpdu44vz5TBgRXbbvnW3y0w1lbLI3ttg/NBdESKH1r1d5AAW2bfu6gp7oMjg97lKdDuYyNS6o6tsQSJD626u0xeGZC7iO9ITR4jIpXUvAVwgIufWvQTQQURadxJEiHgjRLwRIt4IEW+EiDdCxBsh4o0Q8UaIeCNEvBEi3ggRDr3CHl4LkfvypvgCfwOR7r7pt5PekWwgkjbKjsKt2ovk5WbhpXF7kdt3q8L7kuYi07PZUbRdc5Gf7f1BNN6tRX7vWm4lGzYWedlHFk3BxiKvNQqSu6y2Iu87fYLxbivyXsgjmIJNRaZZ03KvXJYi/byySi7eLUVKBSNiKdhQpLCn/zUkUjMTQ5FyeZhUvNuJjEUPsRRsJ1KroRQaEjOReerNnETatxLp6vW5MinYSqRQGPZEZNZrJFJMvU8kUrCRSDn1ZiTi3UakHukJgRRsI1KP9IRAHauJyGnFQ+KVy0JkIfVm+CnYQmQ50hPsFGwgspx6M9x4NxCpHO94g5uC9UXWUm+GWe+tL7Ie6QnmwqO6SGl+W4aXgrVFYJH+gDfr1RaBpN4Ma+FRWQQxIB+8FKwsAo30BCcF64pAU2+GsfCoKgJ4yXqF8cqlKgJPvRl6CtYUwUX6A3oK1hTBpN4MOd4VRQoH0QBQU7CiCDbSE1d3ItjUmyEuPKqJoFNvhpiC1UQokZ6gzXq1RAip9wmp3EZL5DZvGAwpBSuJUCM9QUnBSiLUSE9QZr06IviXrFcIr1wqIuTUmyGkYBUReurN4Ge9GiKc1JtBx7uGCGxpcRl0ClYQ4aXeDHbWqyDCjfQENgXLi9CmIXOQQyIvIvNkoRe15UUKVVkUsPcVyYtsuq0AJ+xPooJIG0LEGyHijRDxRoh4I0S8ESLeCBFvhIg3QsQbIeKNEPFGiHgjRLwRIt4IEW+EiDeaiPTdX78orJuOt+H7jpdhfzuNcle82In046HwbY39SWhwrETGY+mjLQ+uk8S42IiMxY/oPBkO/GGxEFnReMD+Spa+SL90Jv+HgXlpjbrIWI2Nd3jPl7YIbDgSrK9M6Yr0gOj4DeNCDlURfJGm0xM9hDohsomiCK1olmqiJ0Kt2/J2foRe5k87nKQmQq8qp5180xLhFDF7OnbBq5mlhImSCO+4AuXh0hHhVsffvIiwjyvgM5eKCP+4Aj7eISLoJ5Z/fgQ9JGeICPbGEonzI9jDiKAvVGIblaiOxx5OKjwEcxFsoxIHYbC/JYXfrULY4N5IJZ4sbLiXbvAqiOB+oARC/Q4m3IszhoII6t+zfr0ZDMwMvvgwl0QQx+lqV5biuYJDE/418K9Wgf8fqfG4AxyTrrLCURaBLaBB1hQxAJa6+m1t4awicl+hvSycNO/PU32dms5+Oy780e6y8DerIn+NEPFGiHgjRLwRIt4IEW+EiDdCxBsh4o1/I/IJy+9MY0la9hAAAAAASUVORK5CYII="
+                    alt="Abstract API" class="footer-logo">
+                <span class="footer-logo-label">Abstract API</span>
+            </div>
+
+
+            <div class="footer-item">
+                <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://maxst.icons8.com/vue-static/icon/menu/logo.svg" alt="Icons8 logo"
+                        class="footer-logo">
+                </a>
+                <span class="footer-logo-label">Iconos por <a href="https://icons8.com" target="_blank"
+                        rel="noopener noreferrer">@Icons8</a></span>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </footer>
+
+
+
+    <!-- Incluye el archivo de script para el cambio de tema -->
+    <script src="/assets/js/theme-toggle.js"></script>
+
+    <!-- Importa el archivo principal de JavaScript para tu aplicación -->
+    <script type="module" src="./src/js/main.js"></script>
+
+
+
+</body>
+
+</html>
