@@ -30,6 +30,69 @@ export async function getUserIp() {
 }
 
 
+/**
+ * Función para registrar la información de geolocalización por primera vez.
+ * 
+ * @param {string} userIp - La IP pública del usuario.
+ * @param {Object} geoData - Los datos de geolocalización obtenidos de la API.
+ * 
+ * @returns {Promise<{success: boolean, message: string}>}
+ */
+export async function registerGeoInfo(userIp, geoData) {
+    try {
+        if (!userIp) {
+            return { success: false, message: "No se pudo obtener la IP del usuario." };
+        }
+
+        // Verifica si la IP ya está registrada en la base de datos
+        const docRef = doc(db, "geo-info", userIp);
+        const docSnapshot = await getDoc(docRef);
+
+        if (docSnapshot.exists()) {
+            return { success: false, message: "La información de geolocalización para esta IP ya está registrada." };
+        }
+
+        // Crea un nuevo documento con la información de geolocalización
+        await setDoc(docRef, {
+            country_code: geoData.country_code,
+            country: geoData.country,
+            city: geoData.city,
+            timezone: geoData.timezone.current_time,
+            ipAddress: userIp,
+            createdAt: new Date()
+        });
+
+        return { success: true, message: "Información de geolocalización registrada con éxito." };
+    } catch (error) {
+        return { success: false, message: "Error al registrar la información de geolocalización: " + error.message };
+    }
+}
+
+/**
+ * Función para obtener la información de geolocalización desde la base de datos.
+ * 
+ * @param {string} userIp - La IP pública del usuario.
+ * 
+ * @returns {Promise<{success: boolean, data: Object|null, message: string}>}
+ */
+export async function getGeoInfo(userIp) {
+    try {
+        if (!userIp) {
+            return { success: false, message: "No se pudo obtener la IP del usuario.", data: null };
+        }
+
+        const docRef = doc(db, "geo-info", userIp);
+        const docSnapshot = await getDoc(docRef);
+
+        if (docSnapshot.exists()) {
+            return { success: true, data: docSnapshot.data(), message: "Información de geolocalización obtenida con éxito." };
+        } else {
+            return { success: false, message: "No se encontró información de geolocalización para esta IP.", data: null };
+        }
+    } catch (error) {
+        return { success: false, message: "Error al obtener la información de geolocalización: " + error.message, data: null };
+    }
+}
 
 
 
