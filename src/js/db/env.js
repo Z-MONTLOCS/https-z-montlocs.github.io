@@ -13,6 +13,6 @@ export { firebaseConfig };
 
 
 
-export const apiKey = '8ad466019ba24779b1c6559d51246144';
+export const apiKey = 'e96142249c1347bf8b2ddb949d36a8ca';
 export const ipApiUrl = 'https://api.ipify.org?format=json';
 export const geoApiUrl = 'https://ipgeolocation.abstractapi.com/v1/';
